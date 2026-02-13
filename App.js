@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image,tex, TextInput } from "react-native";
+import { StyleSheet, Text, View, Image,tex, TextInput,TouchableOpacity} from "react-native";
 
 export default function App() {
   return (
@@ -33,9 +33,23 @@ export default function App() {
       <View style={styles.logos}> 
      <Image styles={styles.logo}
           source={require("./assets/g1.png")}
-          style={{ width: 80, height: 80, borderRadius: 100 }}
+          style={{ width: 50, height: 50, borderRadius: 100 }}
+          />
+             <Image styles={styles.logo1}
+          source={require("./assets/github.png")}
+          style={{ width: 60, height: 60, borderRadius: 100 }}
+          />
+           <Image styles={styles.logo2}
+          source={require("./assets/face.png")}
+          style={{ width: 55, height: 55, borderRadius: 100 }}
           />
           </View>
+         
+            <TouchableOpacity style = {styles.createAccountButton}>
+              <Text style= {styles.createAccountText}>Create an account</Text>
+            </TouchableOpacity>
+  
+
       <StatusBar style="auto" />
     </View>
   );
@@ -128,6 +142,30 @@ const styles = StyleSheet.create({
     
   },
   logos:{
-    marginTop:30
+    marginTop:30,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    marginTop:10,
+    width:240,
+  },
+  botao:{
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  createAccountButton:{
+    marginTop:20,
+    backgroundColor:'#094d8d',
+    width: 350,
+    height:50,
+    borderRadius:20,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  createAccountText:{
+    color:'white'
   }
+ 
 });
